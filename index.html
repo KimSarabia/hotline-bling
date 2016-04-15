@@ -4,27 +4,36 @@
   <meta charset="UTF-8">
   <title>Hotline Bling - A Contact List</title>
   <link rel="stylesheet" href="style.css">
-  <script src="main.js" charset="utf-8"></script>
 </head>
  <body>
-   <div id="content">
-    <h1> You used to call me on my cell phone </h1>
-     <form action=" " method="post"  autocomplete="on">
-       <p> <label for="username" class=" user" > Name <span class="required">*</span></label> <input type="text" name="username" id="username"  required="required" placeholder="Name"/> </p>
+   <container>
+     <div id = "cardHolder">
 
-       <p> <label for="usermail" class=" mail-alt"> E-mail address <span class="required">*</span></label> <input type="email" name="usermail" id="usermail" placeholder="Email" required="required"  /> </p>
+     </div>
 
-       <p> <label for="usersite" class=" link"> Website </label> <input type="url" name="usersite" id="usersite"  placeholder="eg: www.drakeofficial.com" /> </p>
+     <div id="content">
+      <h1> You used to call me on my cell phone </h1>
 
-       <p> <label for="subject" class=" quote-alt"> Subject </label> <input type="text" name="subject" id="subject"  placeholder="I know when that hotline bling...That can only mean one thing" /> </p>
+       <!-- <form action=" " method="post"  autocomplete="on"> -->
+         <p> <label for="username" class=" user" > Name <span class="required">*</span></label> <input type="text" name="username" id="username"  required="required" placeholder="Name"/> </p>
 
-       <p> <label for="message" class=" comment"> Message  <span class="required">*</span></label> <textarea placeholder=""  required="required" ></textarea> </p>
+         <p> <label for="usermail" class=" mail-alt"> E-mail address <span class="required">*</span></label> <input type="email" name="usermail" id="usermail" placeholder="Email" required="required"  /> </p>
 
-       <p class="indication"> All fields with a <span class="required">*</span> are required</p>
+         <p> <label for="selfie" class=" link"> Selfie </label> <input type="url" name="selfie" id="selfie"  placeholder="Upload your selfie" /> </p>
 
-       <input type="submit" value="Leave a Message" />
+         <p> <label for="subject" class=" quote-alt"> Subject </label> <input type="text" name="subject" id="subject"  placeholder="About" /> </p>
 
-     </form>
-   </div>
+         <p> <label for="message" class=" comment"> Message  <span class="required">*</span></label> <textarea placeholder=""  required="required" ></textarea> </p>
+
+         <p class="indication"> All fields with a <span class="required">*</span> are required</p>
+
+         <button type="button">Leave a Message</button>
+
+       <!-- </form> -->
+     </div>
+   </container>
+
+   <script src='https://code.jquery.com/jquery-2.2.0.min.js'></script>
+   <script src='main.js'></script>
  </body>
 </html>

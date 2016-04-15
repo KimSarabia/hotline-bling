@@ -8,6 +8,26 @@ body {
 }
 /*Background Image Source: https://www.reddit.com/r/mildlyinteresting/comments/3yebyg/a_friend_of_mine_got_a_present_wrapped_in_drake/*/
 
+.selfie {
+  width: 50px;
+  height: 50px;
+}
+
+.card {
+  background-color: #FFFFFF;
+  width: 100px;
+  height: 100px;
+}
+
+#cardHolder {
+  background-color: #FFFFFF;
+  width: 50px;
+  height: 900px;
+}
+
+container {
+  float: left;
+}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block }
 
 h1 {
@@ -17,10 +37,10 @@ h1 {
     padding: 0;
     margin: 0 0 20px 0;
     position: relative;
-    color: #8C8C8C;
+    color: #000000;
 }
 
-/* * have a nice ampersand *
+/* * drake emoji *
    ================================================== */
 
 h1:after {
@@ -169,20 +189,6 @@ textarea {
 /* * adding our icon font !!
    ================================================== */
 
-.iconic:before {
-    font-size: 25px;
-    font-family: "IconicStroke";
-}
-
-.iconic.link:before { content: '/' }
-
-.iconic.quote-alt:before { content: "'" }
-
-.iconic.comment:before { content: "q" }
-
-.iconic.user:before { content: "u" }
-
-.iconic.mail-alt:before { content: "M" }
 
 label {
     color: #7F7E7E;
