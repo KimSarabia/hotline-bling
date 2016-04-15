@@ -1,27 +1,48 @@
 'use strict';
 
-
 $(document).ready(init);
 
-function init(){
-  console.log('ready!');
-  $('#cardHolder').on('click', '.card', clickCard);
-  $('#addCards').click(addCards);
+var woes = [];
+var changeWoe = false;
+var isAlpha = false;
+var isPhone = false;
+var isAlphaEmail = false;
+var isBirth = false;
+var editObj;
 
+function init() {
+  updateList();
+  var $body = $('#body');
+
+  $('#add').click(add);
+  $body.on('click', '.remove', remove);
+  $body.on('click', '.edit', edit);
+  $body.on('click', '#editConfirm', confirm);
+  $body.on('click', '.select',(select));
+  $('#removeSelected').click(removeSelected);
+  $('#sortAlpha').click(sortAlpha);
+  $('#sortAlphaEmail').click(sortAlphaEmail);
+  $('#sortBirth').click(sortBirth);
+  $('#revealAll').click(revealAll);
+  $('#revealFriends').click(revealFriends);
+  $('#revealFamily').click(revealFamily);
+  $('#revealCustom').click(revealCustom);
 }
 
-function addCards(){
-  console.log('add:','add works');
-  var numCards = $('#numCards').val();
-  var $cards = [];
-
-  for(var i = 0; i < numCards; i++){
-    var $card = $('<div>').addClass('card');
-    $card.text(); // how to grab info from card?
-    $card.push()
-  }
-}
-
-function clickCard(event){
-  debugger;
+function add() {
+  console.log('add',add);
+  var $newNameVal = $('#newName').val();
+  var $newPhoneVal = $('#newPhone').val();
+  var $newEmailVal = $('#newEmail').val();
+  if ( (!$newNameVal) && (!$newPhoneVal && !$newEmailVal)) {
+    alert("At least enter a name, phone number, or email.");
+    return;
+  };
+  var woe = {};
+  woe.name = $newNameVal;
+  woe.phone = $newPhoneVal;
+  woe.email = $newEmailVal;
+  woe.group = _.uniq($('#newGroup').val().toLowerCase().split(/\W/)) ;
+  woe.birthday = $('#newBirthday').val();
+  woes.push(woe);
 }
