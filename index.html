@@ -2,45 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hotline Bling - A woe List</title>
+  <title>Hotline Bling - A Themed Contact List</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
- <body>
-   <div id="container">
-     <div id="content">
-      <h1> You used to call me on my cell phone </h1>
+<body>
+  <div class="jumbotron" id="title">
+    <h1>You used to call me</h1>
+  </div>
+  <div class="container" id="form">
+    <div class="row">
+      <span class="col-sm-6">Your woes: </span>
+      <span class="col-sm-6" id="total"></span>
+    </div>
+    <div class="row">
+      <div class="col-sm-1">Show: </div>
+      <div class="col-sm-1 btn btn-default filter" id="getAll">All</div>
+      <div class="col-sm-1 btn btn-default filter" id="getWoes">Woes</div>
+      <div class="col-sm-1 btn btn-default filter" id="getFam">Fam</div>
+      <div class="col-sm-1" id="getFam">Custom: </div>
+      <input class="col-sm-6" type="text" id="customFilter">
+      <div class="col-sm-1 btn btn-default filter" id="showCustom">Go</div>
+    </div>
 
-       <!-- <form action=" " method="post"  autocomplete="on"> -->
-         <p> <label for="username" class=" user" > Name <span class="required">*</span></label> <input type="text" name="username" id="username"  required="required" placeholder="Name"/> </p>
+    <div class="row">
+      <span class="col-sm-1">Name:</span>
+      <input class="col-sm-4" type="text" id="newName" required>
+      <span class="col-sm-1">Phone#:
+      </span>
+      <input class="col-sm-2" type="number" step="1" min="0" id="newPhone">
+      <span class="col-sm-1">Email:</span>
+      <input class="col-sm-3" type="text" id="newEmail">
+    </div>
+    <div class="row">
+      <span class="col-sm-1">Groups: </span>
+      <input class="col-sm-6" type="text" id="newGroup">
+      <span class="col-sm-2">Birthday:</span>
+      <input class="col-sm-3" type="date" id="newBirthday">
+    </div>
+    <div class="row">
+      <div class="col-sm-6 btn btn-default" id="add">Add Contact</div>
+      <div class="col-sm-6 btn btn-default" id="removeSelected">Remove Selected</div>
+    </div>
+  </div>
+  <div class="container" id="labels">
+    <div class="row">
+      <div class="col-sm-3">Name</div>
+      <div class="col-sm-1">Phone</div>
+      <div class="col-sm-2">Email</div>
+      <div class="col-sm-2">Group</div>
+      <div class="col-sm-2">Birthday</div>
+      <div class="col-sm-2">Photo</div>
+    </div>
+  </div>
+  <div class="container" id="body"></div>
 
-         <p> <label for="usermail" class=" mail-alt"> E-mail address <span class="required">*</span></label> <input type="email" name="usermail" id="usermail" placeholder="Email" required="required"  /> </p>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
 
-         <p> <label for="selfie" class=" link"> Selfie </label> <input type="url" name="selfie" id="selfie"  placeholder="Upload your selfie" /> </p>
-
-         <p> <label for="subject" class=" quote-alt"> Subject </label> <input type="text" name="subject" id="subject"  placeholder="About" /> </p>
-
-         <p> <label for="message" class=" comment"> Message  <span class="required">*</span></label> <textarea placeholder=""  required="required" ></textarea> </p>
-
-         <p class="indication"> All fields with a <span class="required">*</span> are required</p>
-
-         <button type="button">Leave a Message</button>
-
-       <!-- </form> -->
-
-     </div>
-
-     <!-- woe list -->
-
-     <div id="content">
-      <ul>
-
-      </ul>
-     </div>
-
-   </div>
-
-
-   <script src='https://code.jquery.com/jquery-2.2.0.min.js'></script>
-   <script src='main.js'></script>
- </body>
+  <script src="main.js"></script>
+</body>
 </html>
