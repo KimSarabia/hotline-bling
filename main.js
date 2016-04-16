@@ -4,10 +4,7 @@ $(document).ready(init);
 
 var contacts = [];
 var editingContact = false;
-var isAlpha = false;
-var isPhone = false;
-var isAlphaEmail = false;
-var isBirth = false;
+
 var editObj;
 
 function init() {
