@@ -10,13 +10,9 @@ function init() {
 
   $('#add').click(add);
   $body.on('click', '#editConfirm', confirm);
-  $('#sortAlpha').click(sortAlpha);
-  $('#sortAlphaEmail').click(sortAlphaEmail);
-  $('#sortBirth').click(sortBirth);
   $('#getAll').click(getAll);
   $('#getWoes').click(getWoes);
   $('#getFam').click(getFam);
-  $('#showCustom').click(showCustom);
 }
 
 function add() {
@@ -34,7 +30,6 @@ function add() {
   contact.group = _.uniq($('#newGroup').val().toLowerCase().split(/\W/)) ;
   contact.birthday = $('#newBirthday').val();
   contacts.push(contact);
-
   updateList();
 }
 
@@ -60,38 +55,4 @@ function updateList(){
 
 function getAll(){
   $('.item').removeClass('hide');
-};
-
-function getWoes(){
-  var $item = $('.item');
-  $item.addClass('hide');
-  $item.each(function(index){
-    if ( _.includes($item.eq(index).children(".group").text().split(/\W/), 'friends') ) {
-      $item.eq(index).removeClass('hide');
-    }
-  });
-};
-
-function getFam(){
-  var $item = $('.item');
-  $item.addClass('hide');
-  $item.each(function(index){
-    if ( _.includes($item.eq(index).children(".group").text().split(/\W/), 'family') ) {
-      $item.eq(index).removeClass('hide');
-    }
-  });
-};
-
-function showCustom(){
-  var $customFilter = $('#customFilter');
-  var array = $customFilter.val().toLowerCase().split(/\W/);
-  var $item = $('.item');
-  $item.addClass('hide');
-  $item.each(function(index){
-    array.forEach(function(entry){
-      if ( _.includes($item.eq(index).children(".group").text().split(/\W/), entry) ) {
-        $item.eq(index).removeClass('hide');
-      }
-    });
-  });
 };

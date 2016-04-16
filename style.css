@@ -18,7 +18,7 @@ body {
 }
 
 #form{
-  background-color: #8BA4CF;
+  background-color: #FFFFFF;
   margin-top: 5px;
   border: 1px solid;
 }
@@ -38,7 +38,6 @@ body {
   background-color: #F7CAC9;
   font-size: 18px;
 }
-
 
 #form div{
   height: 50px;
@@ -66,12 +65,14 @@ input{
 }
 
 .thin {
-  border: 1px solid;
+  /*border: 0px 0px 0px 1px solid;*/
 }
 
 input[type=url] {
   height:100px;
 }
+
+
 
 #body .item {
   background-color: #FFFFFF;
