@@ -16,9 +16,9 @@ function init() {
 }
 
 function add() {
-  var $newNameVal = $('#newName').val();
+  var $newNameVal = $('#first_name').val();
   var $newPhoneVal = $('#newPhone').val();
-  var $newEmailVal = $('#newEmail').val();
+  var $newEmailVal = $('#email').val();
   if ( (!$newNameVal) && (!$newPhoneVal && !$newEmailVal)) {
     alert("Please enter your name, email, and number.");
     return;
@@ -30,10 +30,11 @@ function add() {
   contact.group = _.uniq($('#newGroup').val().toLowerCase().split(/\W/)) ;
   contact.birthday = $('#newBirthday').val();
   contacts.push(contact);
+
   updateList();
 }
 
-function updateList(){
+function updateList() {
   var $contactList = $('#body');
   $contactList.empty();
   var $contacts = $('<div>').addClass('container').attr('id', "body");
