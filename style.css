@@ -1,3 +1,5 @@
+/*gh-pages*/
+
 *{
   font-size: 16px;
   line-height: 1.5;
@@ -6,10 +8,19 @@
 
 }
 
+
 body {
   background-image: url("http://i.imgur.com/WFoXufF.jpg");
 }
 
+h1 {
+  color: #FCADC3;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+
+}
 @media (min-width: 768px) {
     .container{
         width:600px;

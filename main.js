@@ -1,3 +1,4 @@
+// gh-pages
 'use strict';
 
 $(document).ready(init);
@@ -18,13 +19,7 @@ function init() {
   $list.on('click', '#editConfirm', confirm);
   $list.on('click', '.select',(select));
   $('#removeSelected').click(removeSelected);
-  $('#sortAlpha').click(sortAlpha);
-  $('#sortAlphaEmail').click(sortAlphaEmail);
-  $('#sortBirth').click(sortBirth);
   $('#showAll').click(showAll);
-  $('#showFriends').click(showFriends);
-  $('#showFamily').click(showFamily);
-  $('#showCustom').click(showCustom);
 }
 
 
@@ -33,7 +28,7 @@ function add() {
   var $addPhoneVal = $('#addPhone').val();
   var $addEmailVal = $('#addEmail').val();
   if ( (!$newNameVal) && (!$addPhoneVal && !$addEmailVal)) {
-    alert("At least enter a name, phone number, or email.");
+    sweetAlert("Oops...", "At least enter a name, phone number, or email.", "error");
     return;
   };
   var contact = {};
