@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <title>Hotline Bling - A Themed Contact List</title>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-
 
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -48,16 +48,18 @@
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Phone</label>
+                      <i class="material-icons prefix">phone</i>
+
+                        <input id="icon_telephone" type="tel" class="validate">
+                        <label for="icon_telephone">Phone</label>
                     </div>
                 </div>
 
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="date">Birthday</label>
+                      <input type="date" class="datepicker">
+
                     </div>
                 </div>
 
@@ -75,49 +77,34 @@
 
             </form>
         </div>
+        <a class="waves-effect waves-light btn" id="submit">submit</a>
 
     </div>
 
+  <table class="striped">
+        <thead>
+          <tr>
 
-    <!-- <div class="container" id="form">
+              <th data-field="name">Name</th>
+              <th data-field="phone">Phone</th>
+              <th data-field="email">Email</th>
+              <th data-field="date">Birthday</th>
+              <th data-field="photo">Selfie</th>
+          </tr>
+        </thead>
 
-    <div class="row">
-      <span class="col-sm-6">Your woes: </span>
-      <span class="col-sm-6" id="total"></span>
-    </div>
+        <tbody>
+          <tr>
+            <td>Harry</td>
+            <td>123456</td>
+            <td>harry@ministryofmagic.com</td>
+            <td>06/31/1980</td>
+            <td></td>
+          </tr>
 
-    <div class="row">
-      <span class="col-sm-1">Name:</span>
-      <input class="col-sm-4" type="text" id="newName" required>
-      <span class="col-sm-1">Phone#:
-      </span>
-      <input class="col-sm-2" type="number" step="1" min="0" id="newPhone">
-      <span class="col-sm-1">Email:</span>
-      <input class="col-sm-3" type="text" id="newEmail">
-    </div>
+        </tbody>
+      </table>
 
-    <div class="row">
-      <span class="col-sm-1">Selfie: </span>
-      <input class="col-sm-6" type="text" id="newGroup">
-      <span class="col-sm-2">Birthday:</span>
-      <input class="col-sm-3" type="date" id="newBirthday">
-    </div>
-
-    <div class="row">
-      <div class="col-sm-3" id="add">Add Contact</div>
-    </div>
-
-  </div> -->
-    <div class="container" id="labels">
-        <div class="row">
-            <div class="col-sm-3">Name</div>
-            <div class="col-sm-1">Phone</div>
-            <div class="col-sm-2">Email</div>
-            <div class="col-sm-2">Birthday</div>
-            <div class="col-sm-2">Selfie</div>
-        </div>
-    </div>
-    <div class="container" id="body"></div>
 
 
 
