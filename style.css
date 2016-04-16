@@ -1,24 +1,38 @@
 *{
   font-size: 16px;
   line-height: 1.5;
-  font-family: monospace;
+  /*overflow: scroll;*/
+  font-family: Helvetica;
 
 }
 
 body {
-  background-image: url('http://i.imgur.com/WFoXufF.jpg');
+  background-image: url("http://i.imgur.com/WFoXufF.jpg");
 }
 
-#title{
-  font-family: 'Pacifico', cursive;
-  background:rgba(255,255,255,0.5);
-  color: #000000;
-  margin-top: 100px;
-  text-align: center;
+@media (min-width: 768px) {
+    .container{
+        width:600px;
+    }
 }
+
+@media (min-width: 992px) {
+    .container{
+        width:720px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container{
+        width:900px;
+    }
+}
+
 
 #form{
-  background-color: #8BA4CF;
+  background:rgba(255,255,255, 0.9);
+
+
   margin-top: 5px;
   border: 1px solid;
 }
@@ -30,12 +44,12 @@ body {
 }
 
 .btn {
-  background-color: #F7CAC9;
+  background-color: #47CAE6;
   font-size: 16px;
 }
 
 .btn:hover{
-  background-color: #F7CAC9;
+  background-color: #FE75AB;
   font-size: 18px;
 }
 
@@ -52,6 +66,7 @@ body {
 
 #form .row span {
  padding-top: 10px;
+ /*padding-left: 10px; */
 }
 
 input{
@@ -61,7 +76,7 @@ input{
   border: 1px solid;
 }
 
-#body{
+#list{
   margin-bottom: 50px;
 }
 
@@ -69,20 +84,22 @@ input{
   border: 1px solid;
 }
 
-input[type=url] {
-  height:100px;
+input[type=checkbox] {
+  height:25px;
 }
 
-#body .item {
-  background-color: #FFFFFF;
+
+
+#list .item {
+  background:rgba(255,255,255, 0.9);
 }
 
 #form input {
-  background-color: #FFFFFF;
+  background:rgba(255,255,255, 0.9);
 }
 
-#body .item:nth-child(odd) {
-    background-color: #f7cac9;
+#list .item:nth-child(odd) {
+  background:rgba(255,255,255, 0.9);
 }
 
 
@@ -91,17 +108,17 @@ input[type=url] {
 }
 
 .editing{
-  background-color: #FFFFFF;
+  background-color: pink;
 }
 .editing span{
-  background-color: #FFFFFF;
+  background-color: pink;
 }
 
 .strike {
   text-decoration: line-through;
 }
-#body .item.selected {
-  background-color: #F7CAC9;
+#list .item.selected {
+  background-color: #47CAE6;
 }
 
 .check, .edit, .remove{
