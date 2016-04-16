@@ -1,113 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Hotline Bling - A Themed Contact List</title>
-    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-
-    <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.css" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
-    <script src="main.js"></script>
+  <meta charset="UTF-8">
+  <title>Contact List</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">Hotline Bling</a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="">Home</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <br>
-    <br>
-
-    <div class="container">
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">First Name</label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s12">
-                      <i class="material-icons prefix">phone</i>
-
-                        <input id="icon_telephone" type="tel" class="validate">
-                        <label for="icon_telephone">Phone</label>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="input-field col s12">
-                      <input type="date" class="datepicker">
-
-                    </div>
-                </div>
-
-                <form action="#">
-                    <div class="file-field input-field">
-                        <div class="btn">
-                            <span>File</span>
-                            <input type="file">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
-                        </div>
-                    </div>
-                </form>
-
-            </form>
-        </div>
-        <a class="waves-effect waves-light btn" id="submit">submit</a>
-
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img alt="Brand" src="http://i.imgur.com/51mn84u.png">
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div class="container" id="form">
+    <div class="row">
+      <span class="col-sm-6">Your total number of contacts: </span>
+      <span class="col-sm-6" id="total"></span>
     </div>
 
-  <table class="striped">
-        <thead>
-          <tr>
+    <div class="row">
+      <span class="col-sm-1">Name:</span>
+      <input class="col-sm-9" type="text" id="newName" required>
+    </div>
+    <br>
 
-              <th data-field="name">Name</th>
-              <th data-field="phone">Phone</th>
-              <th data-field="email">Email</th>
-              <th data-field="date">Birthday</th>
-              <th data-field="photo">Selfie</th>
-          </tr>
-        </thead>
+    <div class="row">
+      <span class="col-sm-1">Phone#:</span>
+      <input class="col-sm-9" type="number" step="1" min="0" id="addPhone">
+    </div>
+    <br>
 
-        <tbody>
-          <tr>
-            <td>Harry</td>
-            <td>123456</td>
-            <td>harry@ministryofmagic.com</td>
-            <td>06/31/1980</td>
-            <td></td>
-          </tr>
+    <div class="row">
+      <span class="col-sm-1">Email:</span>
+      <input class="col-sm-9" type="text" id="addEmail">
+    </div>
+    <br>
 
-        </tbody>
-      </table>
+    <div class="row">
+      <span class="col-sm-1">Birthday:</span>
+      <input class="col-sm-9" type="date" id="addBirthday">
+    </div>
+    <br>
 
+    <div class="row">
+      <span class="col-sm-1">Photo Url:</span>
+      <input class="col-sm-9" type="url" id="addPhoto">
+    </div>
+    <br>
 
+    <div class="row">
+      <div class="col-sm-6 btn btn-default" id="add">Add Contact</div>
+      <div class="col-sm-6 btn btn-default" id="removeSelected">Remove Selected</div>
+    </div>
+  </div>
 
+  <div class="container" id="labels">
+    <div class="row">
+      <div class="col-sm-3" id="sortAlpha">Name</div>
+      <div class="col-sm-1" id="sortPhone">Phone</div>
+      <div class="col-sm-2" id="sortAlphaEmail">Email</div>
+      <div class="col-sm-2">Photo</div>
+      <div class="col-sm-2" id="sortBirth">Birthday</div>
+      <div class="col-sm-2">Remove Select Edit</div>
+    </div>
+  </div>
 
+  <div class="container" id="list"></div>
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
+
+  <script src="main.js"></script>
 </body>
-
 </html>
